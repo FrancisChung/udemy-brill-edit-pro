@@ -8,7 +8,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
-        repositoryName: 'fc-bep-landing'
+        repositoryName: 'fc-bep-landing',
+        pages: [{
+          type: 'Page',
+          match: '/:uid',
+          path: "/",
+          component: require.resolve('./src/templates/page.js')
+        }]
       }
     },
     `gatsby-plugin-react-helmet`,
