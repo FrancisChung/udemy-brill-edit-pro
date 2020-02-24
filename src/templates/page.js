@@ -8,10 +8,12 @@ query PageQuery($id: String) {
         allPages(id: $id) {
         edges {
             node {
+                content
+                page_title
                 _meta {
                     id
                     uid
-                }
+                } 
             }
         }
     }
@@ -23,10 +25,14 @@ const Page = (props) => {
     console.log(props);
 
     const pageTitle = props.data.prismic.allPages.edges[0].node.page_title;
+    const content = props.data.prismic.allPages.edges[0].node.content;
 
     return (
+        <>
         <RichText render={pageTitle} />
-    )
+        <RichText render={content} />
+        </>
+    );
 }
 
 export default Page;
