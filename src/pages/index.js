@@ -1,11 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+export const query = graphql`
+{
+  prismic {
+    allHomepages {
+      edges {
+        node {
+          body {
+            ... on PRISMIC_HomepageBodyHero {
+              type
+              primary {
+                hero_content
+                hero_title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
+
+const IndexPage = (props) => {
+  console.log(props);
+  return(
   <Layout>
     <SEO title="Home" />
     <h1>Hi people</h1>
@@ -16,6 +40,7 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
-)
+  );
+}
 
 export default IndexPage
