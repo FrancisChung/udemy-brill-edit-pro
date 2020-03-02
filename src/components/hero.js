@@ -11,6 +11,6 @@ const Hero = ({title, content}) => {
             </p>
         </div>
     );
-    }
+}
 
 export default Hero;
