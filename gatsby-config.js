@@ -13,7 +13,7 @@ module.exports = {
         pages: [{
           type: 'Page',
           match: '/:uid',
-          path: "/",
+          path: '/',
           component: require.resolve('./src/templates/page.js')
         }]
       }
