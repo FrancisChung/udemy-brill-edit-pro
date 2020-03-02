@@ -4,8 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
 import styled from 'styled-components'
 
-const Main = styled.main`
-  max-width: 800px;
+const MainWrapper = styled.main`
   margin: 0 auto;
 `
 
@@ -96,7 +95,7 @@ const Layout = ({ children }) => {
           }}
         />
       </Header>
-      <Main>{children}</Main>
+      <MainWrapper>{children}</MainWrapper>
     </>
   )
   }
