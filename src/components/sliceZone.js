@@ -9,7 +9,8 @@ const SliceZone = ({body}) => {
             {body.map((bodyContent, i) => {
                 if (bodyContent.type === 'hero') {
                     return (
-                        <Hero 
+                        <Hero
+                        backgroundImage={bodyContent.primary.background_image.url} 
                         title={bodyContent.primary.hero_title}
                         content={bodyContent.primary.hero_content}
                         key={i} />

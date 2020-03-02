@@ -1,8 +1,8 @@
 import React from "react"
 import {graphql} from "gatsby"
-
-import Layout from "../components/layout"
 import SliceZone from "../components/sliceZone"
+import Layout from "../components/layout"
+
 
 export const query = graphql`
 {
@@ -16,6 +16,7 @@ export const query = graphql`
               primary {
                 hero_content
                 hero_title
+                background_image
               }
             }
           }
@@ -24,14 +25,15 @@ export const query = graphql`
     }
   }
 }
+
 `
 
 const IndexPage = (props) => {
+  console.log(props);
   return(
-    <Layout>
-      <SliceZone body={props.data.prismic.allHomepages.edges[0].node.body} />
-    </Layout>
-  );
-}
-
+  <Layout>
+    <SliceZone body={props.data.prismic.allHomepages.edges[0].node.body} />
+  </Layout>
+)
+  }
 export default IndexPage

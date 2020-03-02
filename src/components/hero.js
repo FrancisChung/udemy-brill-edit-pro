@@ -1,13 +1,13 @@
 import React from 'react'
 import {RichText} from 'prismic-reactjs'
 
-const Hero = ({title, content}) => {
-    console.log(title, content);
+const Hero = ({title, content, backgroundImage}) => {
+    console.log(title, content, backgroundImage);
     return (
         <div>
             <RichText render={title} />
             <p>
-                {content}
+                {content[0].text}
             </p>
         </div>
     );
