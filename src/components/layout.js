@@ -106,9 +106,9 @@ const Layout = ({ children }) => {
       <Main>{children}</Main>
     </>
   )
-
+  }
   Layout.propTypes = {
     children: PropTypes.node.isRequired,
   }
-}
+
 export default Layout
