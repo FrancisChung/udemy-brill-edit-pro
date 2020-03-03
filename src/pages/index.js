@@ -19,6 +19,27 @@ export const query = graphql`
                 background_image
               }
             }
+            ... on PRISMIC_HomepageBodyCall_to_action_grid {
+              type
+              primary {
+                section_title
+              }
+              fields {
+                button_destination {
+                  ... on PRISMIC_Page {
+                    page_title
+                    content
+                    _meta {
+                      uid
+                    }
+                  }
+                }
+                button_label
+                content
+                call_to_action_title
+                featured_image
+              }
+            }
           }
         }
       }
