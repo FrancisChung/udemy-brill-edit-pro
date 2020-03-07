@@ -1,11 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
+import {RichText} from 'prismic-reactjs'
 
-const callToActionGrid = () => {
+const CallToActionGridWrapper = styled.section`
+    max-width: 800px;
+    margin: 0 auto;
+`
+
+
+const CallToActionGrid = ({title, callToActions}) => {
     return (
-        <div>
-            Call to Action grid
-        </div>
+        <CallToActionGridWrapper>
+            <RichText render={title} />
+            {callToActions.map((callToAction,i) => {
+                return (
+                    <div key={i}>
+                        Call To Action
+                    </div>
+                )
+            })}
+        </CallToActionGridWrapper>
     )
 }
 
-export default callToActionGrid;
+export default CallToActionGrid;
