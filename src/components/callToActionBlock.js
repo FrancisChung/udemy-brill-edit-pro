@@ -1,14 +1,20 @@
 import React from 'react';
 import {RichText} from 'prismic-reactjs';
-import CallToActionGrid from './callToActionGrid';
+import styled from 'styled-components';
 
+const CallToActionBlockWrapper = styled.section`
+    padding: 20px;
+    background: #eee;
+    border-radius: 20px;
+    margin: 20px;
+`
 
 const CallToActionBlock = ({title, content}) => {
     return (
-        <div>
+        <CallToActionBlockWrapper>
             <RichText render={title} />
             <RichText render={content} />
-        </div>
+        </CallToActionBlockWrapper>
     )
 }
 
