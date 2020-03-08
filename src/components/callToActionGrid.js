@@ -13,12 +13,15 @@ const CallToActionGrid = ({title, callToActions}) => {
     return (
         <CallToActionGridWrapper>
             <RichText render={title} />
-            {callToActions.map((callToAction,i) => {
+            {callToActions.map((callToAction, i) => {
                 return (
                     <CallToActionBlock 
-                        key={i}
+                        featuredImage={callToAction.featured_image.url}
+                        buttonLabel={callToAction.button_label}
+                        buttonDestination={`/${callToAction.button_destination._meta.uid}`}
                         title={callToAction.call_to_action_title}
                         content={callToAction.content}
+                        key={i}
                     />
                 )
             })}
