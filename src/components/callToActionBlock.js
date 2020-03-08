@@ -11,8 +11,15 @@ const CallToActionBlockWrapper = styled.section`
 
     .call-to-action-content {
         display: flex;
+        .featured-image-wrapper {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin: auto 10px;
+        }
         img {
             max-width: 100px;
+            margin: 0px;
         }
     }
 `
@@ -36,7 +43,7 @@ const CallToActionBlock = ({title, content, buttonLabel, buttonDestination, feat
             <RichText render={title} />
             <div className='call-to-action-content'>
                 <RichText render={content} />
-                <div>
+                <div class ='featured-image-wrapper'>
                     <img src={featuredImage} alt="Featured" />
                 </div>
             </div>
