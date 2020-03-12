@@ -43,7 +43,7 @@ const CallToActionBlock = ({title, content, buttonLabel, buttonDestination, feat
             <RichText render={title} />
             <div className='call-to-action-content'>
                 <RichText render={content} />
-                <div class ='featured-image-wrapper'>
+                <div className="featured-image-wrapper">
                     <img src={featuredImage} alt="Featured" />
                 </div>
             </div>
